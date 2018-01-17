@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         searchResults
             .bind(to: tableView.rx.items(cellIdentifier: "Cell")) {
                 (index, city: City, cell) in
-                cell.textLabel?.text = "\(city.name), \(city.country)"
-                cell.detailTextLabel?.text = "temp: \(city.temperature)"
+                cell.textLabel?.text = "\(city.name), \(city.countryName ?? "not avalible")"
+                cell.detailTextLabel?.text = "temp: \(city.temperature ?? 0) max: \(city.maxTemp ?? 0) min: \(city.minTemp ?? 0)"
             }
             .disposed(by: disposeBag)
     }

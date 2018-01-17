@@ -13,7 +13,7 @@
 		726ACCA6200CEDC400D87E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726ACCA4200CEDC400D87E8F /* Main.storyboard */; };
 		726ACCA8200CEDC400D87E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726ACCA7200CEDC400D87E8F /* Assets.xcassets */; };
 		726ACCAB200CEDC400D87E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726ACCA9200CEDC400D87E8F /* LaunchScreen.storyboard */; };
-		7296796E200DF32400CA3360 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296796D200DF32400CA3360 /* City.swift */; };
+		7296796E200DF32400CA3360 /* WeatherResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296796D200DF32400CA3360 /* WeatherResponce.swift */; };
 		72A6B389200CFC6700984436 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B388200CFC6700984436 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		726ACCA7200CEDC400D87E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		726ACCAA200CEDC400D87E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		726ACCAC200CEDC400D87E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7296796D200DF32400CA3360 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		7296796D200DF32400CA3360 /* WeatherResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponce.swift; sourceTree = "<group>"; };
 		72A6B388200CFC6700984436 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C6DB095EFAA9347CE1C591B8 /* Pods-ArchitecturesWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitecturesWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitecturesWeather/Pods-ArchitecturesWeather.release.xcconfig"; sourceTree = "<group>"; };
 		E8AC46E85BE06C808CCE4659 /* Pods-ArchitecturesWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitecturesWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitecturesWeather/Pods-ArchitecturesWeather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			children = (
 				726ACCA0200CEDC400D87E8F /* AppDelegate.swift */,
 				72A6B388200CFC6700984436 /* NetworkManager.swift */,
-				7296796D200DF32400CA3360 /* City.swift */,
+				7296796D200DF32400CA3360 /* WeatherResponce.swift */,
 				726ACCA2200CEDC400D87E8F /* ViewController.swift */,
 				726ACCA4200CEDC400D87E8F /* Main.storyboard */,
 				726ACCA7200CEDC400D87E8F /* Assets.xcassets */,
@@ -175,14 +175,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -231,7 +229,7 @@
 			files = (
 				72A6B389200CFC6700984436 /* NetworkManager.swift in Sources */,
 				726ACCA3200CEDC400D87E8F /* ViewController.swift in Sources */,
-				7296796E200DF32400CA3360 /* City.swift in Sources */,
+				7296796E200DF32400CA3360 /* WeatherResponce.swift in Sources */,
 				726ACCA1200CEDC400D87E8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

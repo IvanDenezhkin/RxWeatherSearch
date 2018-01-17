@@ -8,7 +8,6 @@
 
 import RxSwift
 import Alamofire
-import SwiftyJSON
 
 class NetworkManager {
     static let apiURL = "http://api.openweathermap.org/data/2.5/find"
@@ -26,17 +25,10 @@ class NetworkManager {
                     observer.onError(error)
                 }
                 if let data = responseJSON.data {
-                    let cityArray = JSON(data)["list"].arrayValue
-                    var cityModelsArray: [City] = []
-                    for city in cityArray {
-                        let city = city.dictionaryValue
-                        let name = city["name"]!.stringValue
-                        let country = city["sys"]!["country"].stringValue
-                        let temperature = city["main"]!["temp"].intValue
-                        cityModelsArray.append(City(name: name, country: country, temperature: temperature))
+                    if let responce = try? JSONDecoder().decode(WeatherResponce.self, from: data) {
+                        observer.onNext(responce.list)
+                        observer.onCompleted()
                     }
-                    observer.onNext(cityModelsArray)
-                    observer.onCompleted()
                 }
             })
             return Disposables.create(with: {

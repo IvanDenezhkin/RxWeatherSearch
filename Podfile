@@ -6,7 +6,6 @@ target 'ArchitecturesWeather' do
   use_frameworks!
 
   pod 'Alamofire'
-  pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
 end

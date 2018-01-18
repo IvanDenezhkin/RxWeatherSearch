@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.titleView = searchBar    // search bar inside navigation bar
+        addSearchObservable()
+        setupSelection()
+    }
+    
+    func addSearchObservable() {
         let searchResults = searchBar.rx.text.orEmpty
             .throttle(0.5, scheduler: MainScheduler.instance)
             .skip(3)
@@ -35,6 +41,22 @@ class ViewController: UIViewController {
                 cell.detailTextLabel?.text = "temp: \(city.temperature ?? 0) max: \(city.maxTemp ?? 0) min: \(city.minTemp ?? 0)"
             }
             .disposed(by: disposeBag)
+    }
+    
+    func setupSelection() {
+        tableView.rx.modelSelected(City.self).asObservable()
+            .subscribe(onNext: { selectedCity in
+                self.performSegue(withIdentifier: "DetailedWeatherSegue", sender: selectedCity)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailedWeatherSegue" {
+            if let controller = segue.destination as? DetailedWeatherViewController {
+                controller.city = sender as? City
+            }
+        }
     }
 }
 

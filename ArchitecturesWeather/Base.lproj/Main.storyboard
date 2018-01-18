@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t1u-NU-iZg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,12 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="City name" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-Vg-dNl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-3U-FDr">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="WU6-ZE-NjH" detailTextLabel="brW-V4-KY3" style="IBUITableViewCellStyleSubtitle" id="0Fl-j4-Q25">
@@ -52,23 +48,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="City name" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-Vg-dNl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Q7R-3U-FDr" firstAttribute="top" secondItem="bkh-Vg-dNl" secondAttribute="bottom" id="3LF-TL-ziU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q7R-3U-FDr" secondAttribute="bottom" id="9S3-zI-ukj"/>
-                            <constraint firstItem="bkh-Vg-dNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J9D-tr-3dn"/>
-                            <constraint firstItem="bkh-Vg-dNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="l4t-NH-Vhz"/>
+                            <constraint firstItem="Q7R-3U-FDr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JDk-UK-SJr"/>
+                            <constraint firstItem="bkh-Vg-dNl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PAQ-8Q-O3E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bkh-Vg-dNl" secondAttribute="trailing" id="mZp-CP-NaN"/>
                             <constraint firstItem="Q7R-3U-FDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qch-Ed-2ob"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q7R-3U-FDr" secondAttribute="trailing" id="son-9e-9NJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bkh-Vg-dNl" secondAttribute="trailing" id="ulU-2W-ft0"/>
+                            <constraint firstItem="bkh-Vg-dNl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xvk-9G-dgN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jA0-mo-Njr">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="bkh-Vg-dNl" id="yVY-3W-DPg"/>
                         <outlet property="searchDisplayController" destination="sSa-mV-WaK" id="i0m-IF-nzR"/>
                         <outlet property="tableView" destination="Q7R-3U-FDr" id="cwf-vH-eYh"/>
+                        <segue destination="LjM-gz-5MM" kind="show" identifier="DetailedWeatherSegue" id="sL1-eT-p3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,6 +85,41 @@
                     </connections>
                 </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="1008.8" y="31.934032983508249"/>
+        </scene>
+        <!--Detailed Weather View Controller-->
+        <scene sceneID="wAO-77-F6r">
+            <objects>
+                <viewController id="LjM-gz-5MM" customClass="DetailedWeatherViewController" customModule="ArchitecturesWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wOC-Hs-t0A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zef-Fv-fZA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1yJ-zT-bvN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWw-gt-bZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gj5-Qc-F3R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t1u-NU-iZg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v3C-ap-BGf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aE2-6B-drH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g47-GT-9x2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="32"/>
         </scene>
     </scenes>
 </document>
